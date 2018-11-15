@@ -1,0 +1,32 @@
+=== WHAT & WHY? ===
+
+This is alternative decoder plugin for module music (MOD, XM,
+IT, etc) based on libxmp.
+
+I wrote it because libmodplug plays some modules incorrectly,
+especialy that ones with stereo samples and filter effects.
+
+
+=== BUILDING ===
+
+To build you need a libxmp (http://xmp.sourceforge.net/).
+Then copy directory 'xmp' into 'decoder_plugins' and add
+a line to file 'decoders.m4':
+
+    m4_include(decoder_plugins/xmp/xmp.m4)
+
+and lines to 'Makefile.am':
+
+    if BUILD_xmp
+        SUBDIRS += xmp
+    endif
+
+These files located under directory 'decoder_plugins'.
+
+On the next step build 'moc' without modplug.
+After building is done run moc and enjoy the music!
+
+
+=== BUG REPORTING ===
+
+You can contact with me via E-Mail <njm.janik (AT) yandex.ru>.
